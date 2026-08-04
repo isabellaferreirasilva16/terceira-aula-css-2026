@@ -33,33 +33,32 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(5, 0, 75, 0.425);
+    background: rgba(211, 40, 125, 0.616);
     z-index: -1;
 }
 .bg-overlay{
 }
 
 .bg-overlay h1{
-    color: rgba(218, 26, 154, 0.829);
+    color: rgba(182, 64, 143, 0.829);
 }
 /*====cabeçario===*/
 header{
     text-align: center;
-    color: rgb(17, 40, 117);
+    color: rgb(240, 204, 232);
     margin-bottom: 40px;
-
+}
 header h1{
 font-size: 2.5rem;
 margin-bottom: 10px;
-text-shadow: 0 2px 8px rgb(13, 45, 148)
-}
-header{
+text-shadow: 0 2px 8px rgb(136, 40, 96)
 }
 header p{
     font-size: 1.1rem;
     opacity: 0.9;
 }
 /*=== cards ===*/
+
 .container-cards{
     display: flex;
     gap: 30px;
@@ -72,17 +71,13 @@ header p{
     height: 380px;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgb(4, 16, 54);
-
+    box-shadow: 0 10px 30px rgb(112, 17, 74);
+    cursor: pointer;
 }
-.card{
-}
-    .card img{
+.card img{
 height: 100%;
 width: 100%;
 object-fit: cover;
-}
-.card img{
 /*Essa transição faz a imagem crescer suavemente*/
 transition: tranform 0.5s ease;
 }
@@ -90,4 +85,54 @@ transition: tranform 0.5s ease;
 .card:houver img{
     transform: scale(1.15);
 }
-.card:houver img
+/* o conteúdo do card fica escondido enbaixo, fora da vista*/
+
+.card-conteudo{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100;
+    padding: 20px;
+    color:rgb(179, 86, 132);
+    background:linear-gradient(to top, rgb(241, 177, 204),transparent);
+}
+/*começa deslocado para baixo invisivel*/
+{trasform: translatey(0%)
+opacity:0;
+transition: transform 0.4s ease, opacity 0.4s ease;
+}
+/* ao passar o mouse no card, o conteúdo some e aparece*/
+.card:houver.card-conteúdo{
+    transform: translateY(0%)
+opacity: 1;
+}
+.card-conteudo h3{
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+.card-conteudo p{
+font-size: 0.9rem;
+margin-bottom: 14px;
+opacity: 0.9;
+}
+.btn{
+    display: inline-block;
+    padding: 8px 18px;
+    background: rgb(233, 102, 146);
+    color: rgb(253, 211, 226);
+    text-decoration: none;
+border-radius:30px;
+front-size:0.5rem;
+font-weight:bold;
+transition:background 0.3 ease;
+}
+.btn houver{
+background: rgb(230, 47, 123);
+}
+/*=== responsivo ===*/
+@MEDIA(max-width:60px){
+ .card{
+    width: 90%;
+    height: 320px;
+ }
+}
